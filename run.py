@@ -1,34 +1,40 @@
 import random
 
-DOGS= ["Alsatian", "Collie"]
+DOGS = ["Alsatian", "Collie"]
 CARS = ["Mercedes", "Jaguar"]
 NAMES = ["Hugh", "Cora"]
 
+CHALLENGE = []
+
 def choose_category():
     print("To begin, please choose a category:")
-    print("Dogs")
-    print("Cars")
-    print("Names")
+    print("DOGS")
+    print("CARS")
+    print("NAMES")
+
+    category = str(input().upper())
 
     while True:
-        category = str(input())
-        if category == "Dogs":
-            challenge = random.sample(DOGS, 1)
+        if category == "DOGS":
+            CHALLENGE.append(random.sample(DOGS, 1))
             gameboard()
             break
-        elif category == "Cars":
-            challenge = random.sample(CARS, 1)
+        elif category == "CARS":
+            CHALLENGE.append(random.sample(CARS, 1))
             gameboard()
             break
-        elif category == "Names":
-            challenge = random.sample(NAMES, 1)
+        elif category == "NAMES":
+            CHALLENGE.append(random.sample(NAMES, 1))
             gameboard()
             break
         else:
             print("Please choose a category to begin")
 
 def gameboard():
-    print("Hello, World!")
+    board = []
+    for i in range(len(CHALLENGE[0])):
+        board.append(i)
+        print(board)
 
 def main():
     print("Welcome to Hangman, everyone's favourite word guessing game!")
