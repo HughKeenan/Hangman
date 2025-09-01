@@ -16,26 +16,25 @@ def choose_category():
 
     while True:
         if category == "DOGS":
-            CHALLENGE.append(random.sample(DOGS, 1))
+            CHALLENGE.append(random.choice(DOGS))
             gameboard()
             break
         elif category == "CARS":
-            CHALLENGE.append(random.sample(CARS, 1))
+            CHALLENGE.append(random.choice(CARS))
             gameboard()
             break
         elif category == "NAMES":
-            CHALLENGE.append(random.sample(NAMES, 1))
+            CHALLENGE.append(random.choice(NAMES))
             gameboard()
             break
         else:
             print("Please choose a category to begin")
 
 def gameboard():
-    board = []
-    for i in range(len(CHALLENGE[0])):
-        board.append(i)
-        print(board)
-
+    task = CHALLENGE[0]
+    for i in range(len(task)):
+        print("_")
+ 
 def main():
     print("Welcome to Hangman, everyone's favourite word guessing game!")
     print("The rules are simple; after selecting a category," 
